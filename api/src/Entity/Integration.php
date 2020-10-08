@@ -5,13 +5,15 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\IntegrationRepository;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
  * @ORM\Entity(repositoryClass=IntegrationRepository::class)
- * @ApiFilter(SearchFilter::class, properties={"software.name": "exact"})
+ * @ApiFilter(SearchFilter::class, properties={"source.name": "exact"})
+ * @ApiFilter(NumericFilter::class, properties={"year": "exact"})
  */
 class Integration
 {

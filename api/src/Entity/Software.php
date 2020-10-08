@@ -8,7 +8,9 @@ use App\Repository\SoftwareRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *  shortName="system"
+ * )
  * @ORM\Entity(repositoryClass=SoftwareRepository::class)
  */
 class Software
